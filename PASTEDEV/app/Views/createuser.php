@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>create user</h1>
-    <form action="<?base_url('user/store')?>" method="post">
+    <form action="<?=base_url('User/store') ?>" method="post">
         <label for="firstname">First Name</label><br>
         <input type="text" id="firstname" name="firstname" required><br>
         <label for="middlename">Middle Name</label><br>

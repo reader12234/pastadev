@@ -12,4 +12,18 @@ class User extends BaseController
     {
         return view('createuser');
     }
+    public function store()
+    {
+        $userModel = new UserModel();
+
+        $data = [
+            'firstname'  => $this->request->getPost('firstname'),
+            'middlename' => $this->request->getPost('middlename'),
+            'lastname'   => $this->request->getPost('lastname'),
+        ];
+
+        $userModel->insert($data);
+
+        return redirect()->to('/')-> with('success', 'User created successfully.');
+    }
 }

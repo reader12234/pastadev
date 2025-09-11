@@ -12,6 +12,19 @@ class User extends BaseController
     {
         return view('createuser');
     }
+    public function list()
+    {
+        $userModel = new UserModel();
+        $data['users'] = $userModel->findAll();
+        return view('list_user', $data);
+        
+    }
+    public function delete($id)
+    {
+        $userModel = new UserModel();
+        $userModel->delete($id);
+        return redirect()->to('/listuser')->with('success', 'User deleted successfully.');
+    }
     public function store()
     {
         $userModel = new UserModel();

@@ -15,7 +15,6 @@
         <label for="lastname">Last Name</label><br>
         <input type="text" id="lastname" name="lastname" value="<?= $user['lastname'] ?>"required><br><br>
         <input type="submit" value="Submit">
-        
       </form>
 </body>
 </html>

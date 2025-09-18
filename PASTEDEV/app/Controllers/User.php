@@ -54,9 +54,7 @@ class User extends BaseController
             'middlename' => $this->request->getPost('middlename'),
             'lastname' => $this->request->getPost('lastname'),
         ];
-
         $userModel->update($id, $data);
-
         return redirect()->to('/listuser')->with('success', 'User updated successfully.');
     }
 

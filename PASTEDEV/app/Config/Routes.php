@@ -13,4 +13,4 @@ $routes->post('User/store', 'User::store');
 $routes->get('listuser', 'User::list');
 $routes->get('user/delete/(:num)', 'User::delete/$1');
 $routes->get('user/edit/(:num)', 'User::edit/$1');
-$routes->post('user/edit/(:num)', 'User::update/$1');
+$routes->post('user/edit/(:num)', 'User::update/$1'); 

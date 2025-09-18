@@ -37,6 +37,28 @@ class User extends BaseController
 
         $userModel->insert($data);
 
-        return redirect()->to('/')-> with('success', 'User created successfully.');
+        return redirect()->to('/listuser')-> with('success', 'User created successfully.');
     }
+    public function edit($id)
+    {
+        $userModel = new UserModel();
+        $data['user'] = $userModel->find($id);
+        return view('edit_user', $data);
+    }
+    public function update($id)
+    {
+        $userModel = new UserModel();
+
+        $data = [
+            'firstname' => $this->request->getPost('firstname'),
+            'middlename' => $this->request->getPost('middlename'),
+            'lastname' => $this->request->getPost('lastname'),
+        ];
+
+        $userModel->update($id, $data);
+
+        return redirect()->to('/listuser')->with('success', 'User updated successfully.');
+    }
+
 }
+    

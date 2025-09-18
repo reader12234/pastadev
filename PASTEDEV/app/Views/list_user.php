@@ -26,7 +26,7 @@
                      <td><?= esc($user['middlename']) ?></td>
                       <td><?= esc($user['lastname']) ?></td>
                       <td>
-                        <a href="">Edit</a>
+                        <a href="<?= base_url('user/edit/' . $user['id']) ?>"onclick="return confirm('sge edit na');">Edit</a>
                             <a href="<?= base_url('user/delete/'. $user['id']) ?>"onclick="return confirm('sge delete na');">Delete</a>
                         </td>
                 </tr>
